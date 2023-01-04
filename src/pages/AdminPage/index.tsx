@@ -1,4 +1,6 @@
 import jwtDecode from "jwt-decode";
+import Dashboard from "../../components/DashBoardAdmin";
+import { LoginAdmin } from "../../components/LoginAdmin";
 
 export const AdminPage = () => {
   const VerifyAuthenticated = () => {
@@ -7,13 +9,15 @@ export const AdminPage = () => {
       const user = jwtDecode<any>(token);
       if (user.profile === "admin") {
         return true;
+      } else {
+        localStorage.removeItem("token");
       }
     }
     return false;
   };
 
   if (VerifyAuthenticated()) {
-    return <div>Admin Page</div>;
+    return <Dashboard />;
   }
-  return <div>Login</div>;
+  return <LoginAdmin />;
 };
