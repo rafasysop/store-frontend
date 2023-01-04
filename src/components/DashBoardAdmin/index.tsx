@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
-import Typography from "@mui/material/Typography";
+import { Avatar, Typography } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
@@ -130,6 +130,13 @@ function DashboardContent() {
               <NotificationsIcon />
             </Badge>
           </IconButton>
+          <Avatar
+            src={"https://avatars.githubusercontent.com/u/71967181?v=4"}
+            alt="R"
+            sx={{ ml: 2 }}
+          >
+            R
+          </Avatar>
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>

@@ -38,8 +38,6 @@ export const LoginAdmin = () => {
           window.location.href = "/admin";
         }
       }, 1000);
-    } else {
-      console.log(data?.auth?.msg);
     }
   }, [data]);
 
@@ -83,6 +81,9 @@ export const LoginAdmin = () => {
             jwtDecode<any>(data.auth.token)?.profile === "admin" && (
               <Alert color="success">Logado com Sucesso, Redirecionando!</Alert>
             )}
+          {data?.auth?.msg && data?.auth?.msg !== "ok" && (
+            <Alert color="warning">{data?.auth?.msg}</Alert>
+          )}
           {error && <Alert color="error">Erro : {error.message}</Alert>}
         </Box>
       </Box>
